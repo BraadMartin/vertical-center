@@ -1,0 +1,29 @@
+/**
+ * Admin CSS
+ *
+ * @since  1.0.0
+ */
+
+.vc-input-wrapper {
+	margin-bottom: 1em;
+}
+
+.vc-input-wrapper label {
+	display: block;
+}
+
+.vc-input-wrapper input[type="text"] {
+	min-width: 300px;
+}
+
+@media ( min-width: 768px ) {
+
+	.vc-input-wrapper {
+		display: inline-block;
+		margin-right: 2em;
+	}
+
+	.vc-input-wrapper label {
+		display: inline;
+	}
+}

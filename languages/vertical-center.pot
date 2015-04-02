@@ -1,0 +1,84 @@
+# Copyright (C) 2015 Vertical Center
+# This file is distributed under the same license as the Vertical Center package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Vertical Center 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/vertical-center\n"
+"POT-Creation-Date: 2015-04-01 08:19:09+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#. #-#-#-#-#  plugin.pot (Vertical Center 1.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: vertical-center.php:123
+msgid "Vertical Center"
+msgstr ""
+
+#: vertical-center.php:263
+msgid "<br />Instructions"
+msgstr ""
+
+#: vertical-center.php:276
+msgid "Element "
+msgstr ""
+
+#: vertical-center.php:317 vertical-center.php:336
+msgid "Selector:"
+msgstr ""
+
+#: vertical-center.php:317
+msgid ""
+"jQuery/CSS selector of the element you want to vertically center. Examples: "
+"<code>#target</code> or <code>.container .target</code>"
+msgstr ""
+
+#: vertical-center.php:318 vertical-center.php:352
+msgid "Offset:"
+msgstr ""
+
+#: vertical-center.php:318
+msgid ""
+"The number of pixels to offset the calculation by. Positive values will "
+"offset down and negative will offset up. Examples: <code>25</code> or "
+"<code>-10</code>"
+msgstr ""
+
+#: vertical-center.php:319
+msgid ""
+"The selected elements will vertically center relative to their parent "
+"elements, and will remain vertically centered as the screen size changes."
+msgstr ""
+
+#: vertical-center.php:344
+msgid "#target"
+msgstr ""
+
+#: vertical-center.php:365
+msgid "Remove"
+msgstr ""
+
+#: vertical-center.php:377
+msgid "+ Add More"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/vertical-center/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Easily vertically center any element relative to its container. Fully "
+"responsive."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Braad Martin"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://braadmartin.com"
+msgstr ""
