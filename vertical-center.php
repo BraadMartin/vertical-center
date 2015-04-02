@@ -3,7 +3,7 @@
  * Vertical Center
  *
  * @package 			Vertical_Center
- * @author				Braad Martin <wordpress@braadmartin.com>
+ * @author			Braad Martin <wordpress@braadmartin.com>
  * @license 			GPL-2.0+
  *
  * @wordpress-plugin
@@ -11,7 +11,7 @@
  * Plugin URI: 			https://wordpress.org/plugins/vertical-center/
  * Description: 		Easily vertically center any element relative to its container. Fully responsive.
  * Version: 			1.0.0
- * Author:				Braad Martin
+ * Author:			Braad Martin
  * Author URI: 			http://braadmartin.com
  * License: 			GPL-2.0+
  * License URI: 		http://www.gnu.org/licenses/gpl-2.0.txt
