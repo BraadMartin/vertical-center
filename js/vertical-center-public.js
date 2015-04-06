@@ -184,7 +184,7 @@
 
 		// Make sure the element is block level.	
 		if ( $target.css( 'display' ) === 'inline' ) {
-			$target.css( 'display', 'block' );
+			$target.css( 'display', 'inline-block' );
 		}
 
 		// Calculate and add the margin-top to center the element.
