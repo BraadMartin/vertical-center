@@ -182,8 +182,10 @@
 		// Grab the wrapper's height.
 		parentHeight = $target.parent().outerHeight();
 
-		// Make sure the element is block level.
-		$target.css( 'display', 'block' );
+		// Make sure the element is block level.	
+		if ( $target.css( 'display' ) === 'inline' ) {
+			$target.css( 'display', 'block' );
+		}
 
 		// Calculate and add the margin-top to center the element.
 		$target.css(
