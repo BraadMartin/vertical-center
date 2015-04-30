@@ -166,7 +166,7 @@ class Vertical_Center {
 			$this->plugin_url . 'js/vertical-center-public.js',
 			array( 'jquery' ),
 			$this->version,
-			false
+			true
 		);
 
 		wp_localize_script( $this->plugin_name, 'verticalCenterElements', $this->options );
