@@ -105,7 +105,7 @@ jQuery( window ).trigger( 'verticalcenter' );
 
 = 1.0.1 =
 * Added support for using selectors that match multiple items
-* Improved compatability with other plugins that use JS to affect layout
+* Improved compatibility with other plugins that use JS to affect layout
 * Bugfix: Better scoping of the admin JS to prevent conflicts with other plugins
 
 = 1.0.0 =
