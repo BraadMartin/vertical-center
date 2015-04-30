@@ -3,7 +3,7 @@
  * Vertical Center
  *
  * @package 			Vertical_Center
- * @author				Braad Martin <wordpress@braadmartin.com>
+ * @author			Braad Martin <wordpress@braadmartin.com>
  * @license 			GPL-2.0+
  *
  * @wordpress-plugin
