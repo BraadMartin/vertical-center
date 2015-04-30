@@ -48,10 +48,10 @@
 
 			// Remove copied value from new input.
 			$input.val( function() {
-				if ( $(this).attr( 'id' ).indexOf( 'offset' ) >= 0 ) {					
+				if ( $(this).attr( 'id' ).indexOf( 'offset' ) >= 0 ) {
 					return 0;
-				} else {		
-					return '';		
+				} else {
+					return '';
 				}
 			});
 
