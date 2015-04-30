@@ -10,7 +10,7 @@
  * Plugin Name: 		Vertical Center
  * Plugin URI: 			https://wordpress.org/plugins/vertical-center/
  * Description: 		Easily vertically center any element relative to its container. Fully responsive.
- * Version: 			1.0.0
+ * Version: 			1.0.1
  * Author:				Braad Martin
  * Author URI: 			http://braadmartin.com
  * License: 			GPL-2.0+
@@ -121,7 +121,7 @@ class Vertical_Center {
 		// Set up the reference vars.
 		$this->plugin_name = 'vertical-center';
 		$this->plugin_display_name = __( 'Vertical Center', 'vertical-center' );
-		$this->version = '1.0.0';
+		$this->version = '1.0.1';
 		$this->plugin_url = plugin_dir_url( __FILE__ );
 		$this->options_group_slug = 'vertical-center-elements';
 
@@ -129,7 +129,8 @@ class Vertical_Center {
 		add_action( 'init', array( $this, 'load_text_domain' ) );
 
 		// Enqueue the script for the vertical centering.
-		add_action( 'wp_enqueue_scripts', array( $this, 'register_public_scripts') );
+		// Load later than usual to try to run after JS from other plugins that may affect the layout.
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_public_scripts'), 30 );
 
 		// Set up the admin settings page and the settings.
 		add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
@@ -176,21 +177,24 @@ class Vertical_Center {
 	 *
 	 * @since  1.0.0
 	 */
-	public function register_admin_scripts() {
+	public function register_admin_scripts( $hook ) {
 
-		wp_enqueue_script(
-			$this->plugin_name,
-			$this->plugin_url . 'js/vertical-center-admin.js',
-			array( 'jquery' ),
-			$this->version,
-			false
-		);
+		if ( 'settings_page_vertical-center' === $hook ) {
 
-		wp_enqueue_style(
-			$this->plugin_name,
-			$this->plugin_url . 'css/vertical-center-admin.css',
-			$this->version
-		);
+			wp_enqueue_script(
+				$this->plugin_name,
+				$this->plugin_url . 'js/vertical-center-admin.js',
+				array( 'jquery' ),
+				$this->version,
+				false
+			);
+
+			wp_enqueue_style(
+				$this->plugin_name,
+				$this->plugin_url . 'css/vertical-center-admin.css',
+				$this->version
+			);
+		}
 	}
 
 	/**
@@ -231,7 +235,7 @@ class Vertical_Center {
 	 */
 	public function create_admin_page() {
 	?>
-		<div class="wrap">
+		<div class="wrap vertical-center-settings-page">
 			<h2><?php echo $this->plugin_display_name; ?></h2>
 			<form method="post" action="options.php">
 				<?php

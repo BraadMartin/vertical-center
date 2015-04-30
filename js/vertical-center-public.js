@@ -173,23 +173,30 @@
 	// Function to do the vertical centering.
 	function doVerticalCenter( selector, offset ) {
 
-		// Scope our variables.
-		var $target, parentHeight;
+		// Selector might match multiple items, so do all
+		// centering calculations on one item at a time.
+		$( selector ).each( function() {
 
-		// Store the target.
-		$target = $( selector );
+			// Scope our variables.
+			var $target, parentHeight;
 
-		// Grab the wrapper's height.
-		parentHeight = $target.parent().outerHeight();
+			// Store the target.
+			$target = $( this );
 
-		// Make sure the element is block level.
-		$target.css( 'display', 'block' );
+			// Grab the wrapper's height.
+			parentHeight = $target.parent().outerHeight();
 
-		// Calculate and add the margin-top to center the element.
-		$target.css(
-			'margin-top',
-			( ( ( parentHeight - $target.outerHeight() ) / 2 ) + parseInt( offset ) )
-		);
+			// Make sure the element is block level.	
+			if ( $target.css( 'display' ) === 'inline' ) {
+				$target.css( 'display', 'inline-block' );
+			}
+
+			// Calculate and add the margin-top to center the element.
+			$target.css(
+				'margin-top',
+				( ( ( parentHeight - $target.outerHeight() ) / 2 ) + parseInt( offset ) )
+			);
+		});	
 	}
 
 })( jQuery );

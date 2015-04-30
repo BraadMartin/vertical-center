@@ -15,26 +15,29 @@
 		 *
 		 * @since  1.0.0
 		 */
-		$( '.add-group' ).on( 'click', function() {
+		$( '.vertical-center-settings-page .add-group' ).on( 'click', function() {
 
 			// Disable buttons to prevent wonkiness during fade.
 			disableButtons();
 
+			// Scope the vars.
+			var $lastRow, $newRow, $input, newIndex;
+
 			// Get the last settings row.
-			var $lastRow = $(this).prev( 'table' ).find( 'tr' ).last();
-			var $newRow = $lastRow.clone( true )
-			var $input = $newRow.find( 'input' );
+			$lastRow = $( this ).prev( 'table' ).find( 'tr' ).last();
+			$newRow = $lastRow.clone( true )
+			$input = $newRow.find( 'input' );
 
 			// Get index for new row.
-			var newIndex = Number( $input.attr( 'data-index' ) ) + 1;
+			newIndex = Number( $input.attr( 'data-index' ) ) + 1;
 
 			// Increment label text.
 			$newRow.find( '.index-number' ).text( newIndex );
 
 			// Increment input name index.
-			$input.attr( 'name', function(index, name) {
+			$input.attr( 'name', function( index, name ) {
 
-				return name.replace(/\[(\d+)\]/, function(fullMatch, n) {
+				return name.replace(/\[(\d+)\]/, function( fullMatch, n ) {
 					return '[' + newIndex.toString() + ']';
 				});
 
@@ -45,19 +48,18 @@
 
 			// Remove copied value from new input.
 			$input.val( function() {
-				if ( $(this).attr( 'id' ).indexOf( 'breakpoint' ) >= 0 ) {
-					return 768;
-				} else {
-					return '';
+				if ( $(this).attr( 'id' ).indexOf( 'offset' ) >= 0 ) {					
+					return 0;
+				} else {		
+					return '';		
 				}
-			})
+			});
 
 			// Insert new row at end of list.
 			$newRow.hide().insertAfter( $lastRow ).fadeIn( 800, function() {
 
 				// Enable buttons again to prevent wonkiness during fade.
 				enableButtons();
-
 			});
 
 		});
@@ -67,13 +69,13 @@
 		 *
 		 * @since  1.0.0
 		 */
-		$( '.remove-group' ).on( 'click', function() {
+		$( '.vertical-center-settings-page .remove-group' ).on( 'click', function() {
 
 			// Disable buttons to prevent wonkiness during fade.
 			disableButtons();
 
 			// Get the row containing the current setting.
-			var $currentRow = $(this).parents( 'tr' );
+			var $currentRow = $( this ).parents( 'tr' );
 
 			// Remove original row.
 			$currentRow.fadeOut( 800, function() {
@@ -82,7 +84,6 @@
 
 				// Enable buttons again to prevent wonkiness during fade.
 				enableButtons();
-
 			});
 
 			function updateSubsequentRows( ) {
@@ -90,7 +91,7 @@
 				var $subsequentRows = $currentRow.nextAll( 'tr' );
 				$subsequentRows.each( function() {
 
-					var $row = $(this);
+					var $row = $( this );
 					var $input = $row.find( 'input' )
 
 					// Get new index for row.
@@ -100,9 +101,9 @@
 					$row.find( '.index-number' ).text( newIndex );
 
 					// Decrement setting index.
-					$row.find( 'input' ).attr( 'name', function(index, name) {
-						return name.replace(/\[(\d+)\]/, function(fullMatch, n) {
-							var newIndex = Number(n) - 1;
+					$row.find( 'input' ).attr( 'name', function( index, name ) {
+						return name.replace(/\[(\d+)\]/, function( fullMatch, n ) {
+							var newIndex = Number( n ) - 1;
 							return '[' + newIndex.toString() + ']';
 						});
 					});
@@ -126,12 +127,12 @@
 
 	// Disable only 'Add' buttons.
 	function disableAddButtons() {
-		$( '.add-group' ).attr( 'disabled', true );
+		$( '.vertical-center-settings-page .add-group' ).attr( 'disabled', true );
 	}
 
 	// Disable only 'Remove' buttons.
 	function disableRemoveButtons() {
-		$( '.remove-group' ).attr( 'disabled', true );
+		$( '.vertical-center-settings-page .remove-group' ).attr( 'disabled', true );
 	}
 
 	// Enable all buttons.
@@ -142,18 +143,18 @@
 
 	// Enable only 'Add' buttons.
 	function enableAddButtons() {
-		$( '.add-group' ).attr( 'disabled', false );
+		$( '.vertical-center-settings-page .add-group' ).attr( 'disabled', false );
 	}
 
 	// Enable only 'Remove' buttons.
 	function enableRemoveButtons() {
-		$( '.remove-group' ).attr( 'disabled', false );
+		$( '.vertical-center-settings-page .remove-group' ).attr( 'disabled', false );
 		doRemoveButtonCheck();
 	}
 
 	// Disable remove buttons if there is only one left.
 	function doRemoveButtonCheck() {
-		if ( $( 'button.remove-group' ).length <= 1 ) {
+		if ( $( '.vertical-center-settings-page button.remove-group' ).length <= 1 ) {
 			disableRemoveButtons();
 		}
 	}
