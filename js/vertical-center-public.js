@@ -184,7 +184,7 @@
 			$target = $( this );
 
 			// Grab the wrapper's height.
-			parentHeight = $target.parent().outerHeight();
+			parentHeight = $target.parent().height();
 
 			// Make sure the element is block level.	
 			if ( $target.css( 'display' ) === 'inline' ) {
