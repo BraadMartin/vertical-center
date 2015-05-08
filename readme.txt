@@ -4,7 +4,7 @@ Donate link:       http://braadmartin.com
 Tags:              vertical, center, responsive, jQuery, JavaScript
 Requires at least: 3.8
 Tested up to:      4.2.1
-Stable tag:        1.0.1
+Stable tag:        1.0.3
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,7 @@ Vertical Center lets you easily vertically center elements.
 * Specify simple CSS/jQuery selectors to target elements
 * Easy to use admin interface
 * Items are vertical centered immediately after the page has loaded
+* Adds a class to each centered element after it has been centered (useful for CSS transition effects)
 * Fully responsive (automatically updates on resize and orientationchange events)
 * Works on mobile devices
 * Works across all modern browsers (including IE8)
@@ -58,6 +59,19 @@ The `initVerticalCenter()` function is chainable. My personal favorite way to us
 
 `
 jQuery( '.selector' ).initVerticalCenter().delay( 200 ).fadeTo( 'slow', 1 );
+`
+
+Or to achieve the same effect with only CSS you can use the `vc-complete` class that gets added to each target element after the initial centering (added in version 1.0.3), which might look like this:
+
+`
+#target {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+#target.vc-complete {
+	opacity: 1;
+}
 `
 
 This plugin also adds an event 'verticalcenter' to the window, allowing you to easily trigger the vertical centering manually. This is useful if you have added items to the page after it loads via AJAX. You can trigger the event like this:
@@ -102,6 +116,12 @@ jQuery( window ).trigger( 'verticalcenter' );
 1. Click Install.
 
 == Changelog ==
+
+= 1.0.3 =
+* Add a class to each target element after it has been initially centered
+
+= 1.0.2 =
+* Improve centering calculation when parent elements have padding
 
 = 1.0.1 =
 * Added support for using selectors that match multiple items

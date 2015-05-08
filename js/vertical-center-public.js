@@ -195,7 +195,7 @@
 			$target.css(
 				'margin-top',
 				( ( ( parentHeight - $target.outerHeight() ) / 2 ) + parseInt( offset ) )
-			);
+			).addClass( 'vc-complete' );
 		});	
 	}
 
