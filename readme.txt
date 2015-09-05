@@ -3,7 +3,7 @@ Contributors:      Braad
 Donate link:       http://braadmartin.com
 Tags:              vertical, center, responsive, jQuery, JavaScript
 Requires at least: 3.8
-Tested up to:      4.2.1
+Tested up to:      4.3
 Stable tag:        1.0.3
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -63,16 +63,14 @@ jQuery( '.selector' ).initVerticalCenter().delay( 200 ).fadeTo( 'slow', 1 );
 
 Or to achieve the same effect with only CSS you can use the `vc-complete` class that gets added to each target element after the initial centering (added in version 1.0.3), which might look like this:
 
-`
-#target {
-	opacity: 0;
-	transition: opacity 0.5s;
-}
+	#target {
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
 
-#target.vc-complete {
-	opacity: 1;
-}
-`
+	#target.vc-complete {
+		opacity: 1;
+	}
 
 This plugin also adds an event 'verticalcenter' to the window, allowing you to easily trigger the vertical centering manually. This is useful if you have added items to the page after it loads via AJAX. You can trigger the event like this:
 
