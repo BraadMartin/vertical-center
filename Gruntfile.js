@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		wp_readme_to_markdown: {
@@ -19,11 +18,9 @@ module.exports = function(grunt) {
 		}
 	});
 
-	// Load the plugins that provides the uglify and minify tasks.
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
-	// Default task(s).
 	grunt.registerTask( 'build', [
 		'wp_readme_to_markdown',
 		'makepot'
