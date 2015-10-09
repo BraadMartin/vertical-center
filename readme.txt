@@ -4,7 +4,7 @@ Donate link:       http://braadmartin.com
 Tags:              vertical, center, responsive, jQuery, JavaScript
 Requires at least: 3.8
 Tested up to:      4.3
-Stable tag:        1.1.0
+Stable tag:        1.1.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,9 @@ jQuery( window ).trigger( 'verticalcenter' );
 
 == Changelog ==
 
+= 1.1.1 =
+* Fix JS error when no option has yet been saved
+
 = 1.1.0 =
 * Code cleanup and refactoring
 * The plugin class now loads on 'init'
@@ -143,6 +146,9 @@ jQuery( window ).trigger( 'verticalcenter' );
 * First release
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+* Fix JS error when no option has yet been saved
 
 = 1.1.0 =
 * Code cleanup and refactoring

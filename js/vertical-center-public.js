@@ -14,6 +14,11 @@
 	// Call on load in case we're centering an image.
 	$( window ).on( 'load', function() {
 
+		// Only proceed if we have elements.
+		if ( typeof verticalCenterElements == 'undefined' ) {
+			return;
+		}
+
 		$.each( verticalCenterElements, function() {
 
 			$.each( this, function() {

@@ -1,6 +1,6 @@
 {
   "name": "vertical-center",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Easily vertically center any element relative to its container. Fully responsive.",
   "main": "Gruntfile.js",
   "scripts": {
